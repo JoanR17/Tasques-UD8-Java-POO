@@ -30,30 +30,36 @@ public class Electrodomestico {
 	{
 		this.precioBase = precioBase;
 		this.peso = peso;
-		
-		if(color.equalsIgnoreCase("blanco") || color.equalsIgnoreCase("negro") || color.equalsIgnoreCase("rojo") || color.equalsIgnoreCase("azul") || color.equalsIgnoreCase("gris"))
-		{
-			this.color = color;
-		}
-		else
-		{
-			this.color = COLOR_DEFAULT;
-		}
-
-		if(consumo >= 65 && consumo <= 70)
-		{
-			this.consumo = consumo;
-		}
-		else if((consumo - 32) >= 65 && (consumo - 32) <= 70)
-		{
-			this.consumo = (char)(consumo - 32);
-		}
-		else
-		{
-			this.consumo = CONSUMO_DEFAULT;
-		}
+		this.color = validarColor(color);
+		this.consumo = validarConsumo(consumo);
 	}
 
+	//Validadores
+	private String validarColor(String color2) 
+	{
+		if(color2.equalsIgnoreCase("blanco") || color2.equalsIgnoreCase("negro") || color2.equalsIgnoreCase("rojo") || color2.equalsIgnoreCase("azul") || color2.equalsIgnoreCase("gris"))
+		{
+			return color2.toLowerCase();
+		}
+		
+		return COLOR_DEFAULT;
+	}
+
+	private char validarConsumo(char consumo2) 
+	{
+		if(consumo2 >= 65 && consumo2 <= 70)
+		{
+			return consumo2;
+		}
+		else if((consumo2 - 32) >= 65 && (consumo2 - 32) <= 70)
+		{
+			return (char)(consumo2 - 32);
+		}
+		
+		return CONSUMO_DEFAULT;
+	}
+
+	//Getters y Setters
 	public double getPrecioBase() {
 		return precioBase;
 	}
