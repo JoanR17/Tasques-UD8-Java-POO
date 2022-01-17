@@ -4,18 +4,18 @@ public class Password {
 	private final String CARACTERES = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	
 	private int longitud;
-	private String contraseña;
+	private String password;
 	
 	public Password()
 	{
 		this.longitud = 8;
-		this.contraseña = passRandom(8);
+		this.password = passRandom(8);
 	}
 	
 	public Password(int longitud)
 	{
 		this.longitud = longitud;
-		this.contraseña = passRandom(longitud);
+		this.password = passRandom(longitud);
 	}
 
 	private String passRandom(int longitud2) {
@@ -38,17 +38,17 @@ public class Password {
 		this.longitud = longitud;
 	}
 
-	public String getContraseña() {
-		return contraseña;
+	public String getPassword() {
+		return password;
 	}
 
-	public void setContraseña(String contraseña) {
-		this.contraseña = contraseña;
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 	@Override
 	public String toString() {
-		return "Password [longitud=" + longitud + ", contraseña=" + contraseña + "]";
+		return "Password [longitud=" + longitud + ", contraseña=" + password + "]";
 	}
 
 }
