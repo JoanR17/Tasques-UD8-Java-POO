@@ -6,9 +6,9 @@ public class Electrodomestico {
 	private final char CONSUMO_DEFAULT = 'F';
 	private final double PESO_DEFAULT = 5;
 	
-	private double precioBase, peso;
-	private String color;
-	private char consumo;
+	protected double precioBase, peso;
+	protected String color;
+	protected char consumo;
 
 	public Electrodomestico() 
 	{
